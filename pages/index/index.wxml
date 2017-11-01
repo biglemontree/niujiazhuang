@@ -1,0 +1,87 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="search" class="bg-yellow p-rcenter search">
+      <input class="ta-c f14" placeholder="搜索公司名称" name="search" confirm-type="搜索" placeholder-class='search-name' bindinput="" bindconfirm="searchCompany"  bindfocus="goToSearch"/>
+  </view>
+  <!--  wx:for="{{search}}" -->
+  <view wx:if='{{!isShow}}'>
+    <navigator class='pd10' url="/pages/index/company/company?companyId={{item.cpId}}"  hover-class="navigator-hover" wx:for="{{search}}" wx:key="index" data-index='{{index}}' >
+      <view class='f14 bb-s'>{{item.cpNname}}</view>
+      <!-- <view>测试</view> -->
+    </navigator>
+  </view>
+  <view class="bg-fa company-wrap" wx:if='{{isShow}}'>
+      <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{current}}">
+        <block wx:for="{{list}}" wx:key="index">
+            <swiper-item>
+              <view class="slide-image">
+                <image src="{{item.faceImg}}" class="slide-image" width="355" height="150" mode='aspectFill'/>
+                <view class="c-infos ">
+                  <view class="p-rcenter c-desc fbold truncate">{{item.cpWork}}</view>
+                  <view class="p-rcenter f14 c-name">
+                    <text class='truncate'>
+                      {{item.cpNname}}
+                    </text>
+                  </view>
+                  <view class="c-data">
+                    <view class="c-satify">
+                      <view class="">
+                        {{item.satisfactionRate}}
+                      </view>
+                      <view class="f10 c-center ">
+                        满意率(%)
+                      </view>
+                      <view class="color-bar">
+                      </view>
+                    </view>
+                    <view class="c-deal">
+                      <view class="">
+                        {{item.finishSize}}
+                      </view>
+                      <view class="f10 p-gray c-center">
+                        成交量(次)
+                      </view>
+                      <view class="color-bar">
+                      </view>
+                    </view>
+                    <view class="c-like">
+                      <view class="">
+                        {{item.evaluleSize}}
+                      </view>
+                      <view class="f10 p-gray c-center">
+                        评论(人)
+                      </view>
+                      <view class="color-bar">
+                      </view>
+                    </view>
+
+                  </view>
+
+                  <view class="btn-group p-vcenter">
+                    <view class="cfff bg-yellow backup" data-cpId="{{item.cpId}}" bindtap="joinBackup">
+                      加入备选
+                    </view>
+                    <navigator url="/pages/index/company/company?companyId={{item.cpId}}"  hover-class="navigator-hover">
+                      <view class=" p-yellow">
+                        了解更多
+                      </view>
+                    </navigator>
+                  </view>
+
+                  <view class="c-address p-vcenter">
+                    <view class="address-left f11 p-gray">
+                      <image src="/images/me/btn_map.png" mode='widthFix' />
+                      {{item.cpAddress}}
+                    </view>
+                    <view class="address-right f11 p-gray">
+                      距离：{{item.distance}} KM
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </swiper-item>
+        </block>
+      </swiper>
+  </view>
+</view>

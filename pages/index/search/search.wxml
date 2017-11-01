@@ -1,0 +1,14 @@
+<!--pages/index/search/search.wxml-->
+<view class='container'>
+  <view  bindtap="search" class="bg-yellow p-rcenter search">
+      
+      <input class="ta-c f14" placeholder="搜索公司名称" name="search" confirm-type="搜索" placeholder-class='search-name' bindinput="" bindconfirm="searchCompany"  bindfocus="hideCompany"/>
+  </view>
+  <!--  wx:for="{{search}}" -->
+  <view wx:if='{{!isShow}}'>
+    <navigator class='pd10' url="/pages/index/company/company?companyId={{item.cpId}}"  hover-class="navigator-hover" wx:for="{{search}}" wx:key="index" data-index='{{index}}' >
+      <view class='f14 bb-s'>{{item.cpNname}}</view>
+      <!-- <view>测试</view> -->
+    </navigator>
+  </view>
+</view>

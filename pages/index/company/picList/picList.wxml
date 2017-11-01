@@ -1,0 +1,11 @@
+<view class="right-item record">
+  <view class="company-record bb-s" wx:for="{{photo}}" wx:key="{{index}}">
+      <image class="record-pic" src="{{item.href}}" mode='widthFix' ></image>
+      <view class="record-info f15 p-vcenter p-gray">
+        <text class="nowrap">{{item.createTime}}</text>
+      </view>
+      <view class="record-name f17 fbold">
+        {{item.content}}
+      </view>
+  </view>
+</view>

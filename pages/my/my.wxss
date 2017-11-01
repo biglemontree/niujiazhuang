@@ -1,0 +1,62 @@
+/* pages/my/my.wxss */
+page{
+  height: 100%;
+}
+.my {
+  height: 100%;
+}
+.m-content {
+  height: 81.3%;
+}
+.m-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 55rpx 30rpx ;
+}
+.avator {
+  width:88rpx;
+  height:88rpx;
+}
+.m-middle {
+  display: flex;
+  flex: 1;
+  align-content: space-between;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: 54rpx;
+}
+.tel {
+  margin-top: 20rpx;
+}
+.next {
+  width:44rpx;
+  height:41rpx;
+}
+/* m-content */
+.m-content {
+}
+.m-content navigator, .m-content > view {
+  width: 50%;
+  height: 33.3%;
+}
+.m-item {
+  width: 100%;
+  height: 100%;
+  padding-top: 60rpx;
+  flex-direction: column;
+  vertical-align: middle;
+}
+.m-item image {
+  width:74rpx;
+  height:88rpx;
+  margin-bottom: 20rpx;
+}
+.m-name {
+
+}
+.m-item:nth-child(2n+1) {
+  border-right: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+}

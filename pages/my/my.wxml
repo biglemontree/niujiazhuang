@@ -1,0 +1,58 @@
+<!--pages/my/my.wxml-->
+<view class="my">
+  <view class="m-info bg-yellow">
+    <image src="/images/me/btn_avator.png" class='avator' mode='widthFix' binderror="" bindload=""></image>
+    <view class="m-middle">
+      <view class="company cfff f18">
+        {{user.userName}}
+      </view>
+      <view class="tel cfff f13">
+        {{user.phone}}
+      </view>
+    </view>
+    <image class='next' src="/images/me/btn_next.png" bindtap='changeUser' mode='widthFix' binderror="" bindload=""></image>
+  </view>
+  <view class='m-content bg-eee'>
+
+    <navigator class="dpI" url="./mOrder/mOrder"  >
+      <view class="m-item ta-c dpI bs-bb">
+        <image src="/images/me/btn_order.png" mode='widthFix'></image>
+        <view class="m-name fbold">
+          专属订单
+        </view>
+      </view>
+    </navigator>
+    <navigator class="dpI" url="./rent-sale/rent-sale"  >
+      <view class="m-item ta-c dpI bs-bb">
+        <image src="/images/me/btn_rent.png" mode='widthFix' ></image>
+        <view class="m-name fbold">
+          出租出售
+        </view>
+      </view>
+    </navigator>
+    <navigator class="dpI" url="./standby-company/standby-company"  >
+      <view class="m-item ta-c dpI bs-bb">
+        <image src="/images/me/btn_backup.png" mode='widthFix'></image>
+        <view class="m-name fbold">
+          备选公司
+        </view>
+      </view>
+    </navigator>
+    <view class="dpI" bindtap='calling'>
+      <view class="m-item ta-c dpI bs-bb">
+        <image src="/images/me/btn_call.png" mode='widthFix'></image>
+        <view class="m-name fbold" >
+          在线投诉
+        </view>
+      </view>
+    </view>
+    <navigator class="dpI" url="./info/info"  >
+      <view class="m-item ta-c dpI bs-bb">
+        <image src="/images/me/btn_info.png" mode='widthFix'></image>
+        <view class="m-name fbold">
+          个人资料
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

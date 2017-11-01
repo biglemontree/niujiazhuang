@@ -1,0 +1,86 @@
+/**app.wxss**/
+
+html, body {font-family: PingFangSC-Regular,Helvetica,STHeiti STXihei,Microsoft JhengHei,Microsoft YaHei,Arial}
+page {
+  height: 100%;
+  font-family:PingFangSC-Regular,Helvetica,STHeiti STXihei,Microsoft JhengHei,Microsoft YaHei,Arial;
+}
+/* 公共样式 */
+.p-yellow {color: #FF7B3A;}
+.p-gray {color: #9B9DB1;}
+.cfff {color: #fff;}
+.c888 {color:#888888;}
+.c000 {color: #000000}
+.c-blue {color: blue}
+.bg-yellow {background-color: #ff6801;}
+.bg-eee {background:#efeff4;}
+.bg-fa {background-color: #fafafa;}
+.bg-fff {background-color: #fff;}
+.bb-s {border-bottom: 1px solid #DDDEE2;}
+/*font*/
+.f18 {font-size: 36rpx}
+.f17 {font-size: 34rpx}
+.f16 {font-size: 32rpx}
+.f15 {font-size: 30rpx}
+.f14 {font-size: 28rpx}
+.f13 {font-size: 26rpx}
+.f12 {font-size: 24rpx;}
+.f11 {font-size: 22rpx;}
+.f10 {font-size: 20rpx;}
+.fbold {font-weight: bold;}
+.nowrap {white-space: nowrap;}
+.truncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*间距*/
+.pd10 {padding-left: 20rpx;padding-right: 20rpx;}
+.pd15 {padding-left: 30rpx;padding-right: 30rpx;}
+.py-10 {padding-top: 20rpx; padding-bottom: 20rpx;}
+.pdl17 {padding-left: 34rpx;}
+/*布局*/
+.pos-fix{position:fixed}.pos-rel{position:relative}.pos-abs{position:absolute}.pos-stc{position:static}
+.t0{top:0}.b0{bottom:0}.l0{left:0}.r0{right:0}
+.m-auto{margin:auto}.m-0auto{margin:0 auto}.m-auto0{margin:auto 0}.m-10auto{margin: 1rem auto}
+.dpI{display: inline-block;}
+.dpN{display:none;}
+.dpB{display:block;}
+.viH{visibility: hidden;}
+.bs-bb{box-sizing: border-box;}
+.ta-c {text-align: center;}
+.ta-l {text-align: left;}
+.ta-r {text-align: right;}
+.p-center {
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.p-rcenter {
+  display: flex;
+  justify-content: center;
+}
+.p-vbetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.p-vcenter {
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+}
+/*伪类*/
+.p-after::after {
+  position: absolute;
+  display: block;
+}
+
+.p-bg::after {
+  content: '';
+  display: block;
+  background:#d8d8d8;
+  width:750rpx;
+}

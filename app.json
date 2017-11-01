@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/direct/direct",
+    "pages/direct/cloth/make/make",
+    "pages/my/my",
+    "pages/index/signin/signin",
+    "pages/my/info/info",
+    "pages/my/rent-sale/rent-sale",
+    "pages/index/company/company",
+    "pages/my/standby-company/standby-company",
+    "pages/direct/cloth/cloth",
+    "pages/my/standby-company/comment/comment",
+    "pages/my/mOrder/mOrder",
+    "pages/my/info/about/about",
+    "pages/index/company/picList/picList",
+    "pages/index/search/search",
+    "pages/direct/cloth/rule/rule"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF6725",
+    "backgroundColor": "#FF6725",
+    "navigationBarTitleText": "牛家庄",
+    "navigationBarTextStyle": "#fff"
+  },
+  "navigationBarBackgroundColor": "#fff",
+  "tabBar": {
+    "color": "#9B9DB1",
+    "selectedColor": "#FF6725",
+    "borderStyle": "#9B9DB1",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "硬装公司",
+        "iconPath": "images/footer/btn_company.png",
+        "selectedIconPath": "images/footer/btn_company_s.png"
+      },
+      {
+        "pagePath": "pages/direct/direct",
+        "text": "专属直供",
+        "iconPath": "images/footer/btn_own.png",
+        "selectedIconPath": "images/footer/btn_own_s.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "个人中心",
+        "iconPath": "images/footer/btn_my.png",
+        "selectedIconPath": "images/footer/btn_my_s.png"
+      }
+    ]
+  }
+}

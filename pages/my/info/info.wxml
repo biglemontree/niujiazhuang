@@ -1,0 +1,69 @@
+<!--info.wxml-->
+<view class="info bg-eee">
+  <form bindsubmit="submit" bindreset="" report-submit="">
+    <view class="top pd15 bg-eee p-vcenter">
+      <view class="left c888">
+      房子定位
+      </view>
+      <view class="icon" bindtap="choosePos">
+        <image src="/images/me/btn_map.png" mode='widthFix' binderror="" bindload=""></image>
+      </view>
+    </view>
+    <view class="address pd15 f16 fbold c000 bg-fff">
+      <textarea auto-height='true' name="address" value='{{userinfo.address}}' placeholder='请输入地址'/>
+    </view>
+    <view class="top pd15 bg-eee p-vcenter">
+      <view class="left c888 fbold">
+      基本资料
+      </view>
+    </view>
+    <view class="basic-info pdl17 bg-fff">
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          小区名称
+        </view>
+        <input class="value f17 fbold" name="neighbourhood" value="{{userinfo.neighbourhood}}"></input>
+      </view>
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          房号
+        </view>
+        <input class="value f17 fbold" name="house" value="{{userinfo.house}}"></input>
+      </view>
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          业主名称
+        </view>
+        <input class="value f17 fbold" name="userName" value="{{userinfo.userName}}"></input>
+      </view>
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          户型
+        </view>
+        <input class="value f17 fbold" name="houseStyle" value="{{userinfo.houseStyle}}"></input>
+      </view>
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          装修风格
+        </view>
+        <input class="value f17 fbold" name="style" value="{{userinfo.style}}"></input>
+      </view>
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          装修预算
+        </view>
+        <input class="value f17 fbold" placeholder="单位: 万元" name="budget" value="{{userinfo.budget}}" type="digit"></input>
+        <text class="f17 fbold unit">万</text>
+      </view>
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          计划时间
+        </view>
+        <input class="value f17 fbold" name="planTime" value="{{userinfo.planTime}}"></input>
+      </view>
+    </view>
+    <view class="confirm pos-abs l0 r0 m-auto">
+      <button  class="bg-yellow cfff" formType="submit">确 认</button>
+    </view>
+  </form>
+</view>

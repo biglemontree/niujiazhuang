@@ -1,0 +1,71 @@
+<!--cloth.wxml-->
+<view class="cloth">
+    <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="bindchange" style="height:{{imgheights[current]}}rpx;">
+        <block wx:for="{{commodityList[0].facePic}}" wx:key="index"  >
+            <swiper-item >
+              <scroll-view scroll-y="{{true}}">
+                <image src="{{item}}" mode='widthFix' height='600px' class="slide-image" bindload="imageLoad" style="height:{{imgheights[current]}}rpx;width:{{imgwidth}}rpx;" />
+              </scroll-view>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="info">
+        <view class="f17 fbold title">{{commodityList[0].title}} </view>
+        <view class="f13 fbold desc">{{commodityList[0].contentf}}</view>
+        <view class="f13 fbold p-yellow">{{commodityList[0].contents}}</view>
+        <ul class="server-info p-vcenter">
+            <li class="p-dot f14 p-vcenter">厂家直供</li>
+            <li class="p-dot f14 p-vcenter">售后服务</li>
+            <li class="p-dot f14 p-vcenter">终身保修</li>
+        </ul>
+        <view class="price-info p-yellow fbold">
+          <text class="f14">定金 ¥ </text>
+          <text class="f18 price">{{commodityList[0].deposit}}元</text>
+        </view>
+    </view>
+    <view class="p-bg">
+    </view>
+    <!-- tab content -->
+    <view class="tab">
+      <view class="tab-left" bindtap="tabFun">
+        <view class="p-dot p-center {{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-id="0">产品介绍</view>
+        <view class="p-dot p-center {{tabArr.curHdIndex=='1'? 'active' : ''}}" id="tab-hd02" data-id="1">用户评价</view>
+      </view>
+
+      <view class="tab-right">
+        <!-- 产品介绍 -->
+        <view class="right-item {{tabArr.curBdIndex=='0'? 'active' : ''}}">
+          <image class="commodity bs-bb" wx:for="{{photoInfo}}" wx:key="{{index}}" src="{{item.href}}" mode='widthFix' binderror="" bindload=""></image>
+        </view>
+        <!-- 用户评价 -->
+        <view class="right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}" wx:for="{{evaluateList}}" wx:key="{{index}}">
+          <view class="user-comment p-vcenter" >
+            <view class="user-avator">
+              <image src="/images/logo.png" mode='widthFix' binderror="" bindload=""></image>
+            </view>
+            <view class="user-name f15 fbold">
+              {{item.userName}}
+            </view>
+            <view class="time f12 p-gray">
+              {{item.evaluateTime}}
+            </view>
+          </view>
+          <view class="user-content f13 bb-s">
+            {{item.evaluate}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="footer p-vcenter pos-fix">
+      <view class="cfff bg-yellow p-center make-order" bindtap="makeorder">
+        定制下单
+      </view>
+      <view class="asker p-center ">
+        <button  open-type="contact" class='f10 p-gray'>
+          <image src="/images/btn_waiter.png"  binderror="" bindload="" mode='widthFix'></image>
+          <view class="f10 p-gray">客服</view>
+        </button>
+      </view>
+    </view>
+</view>

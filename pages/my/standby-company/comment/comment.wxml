@@ -1,0 +1,31 @@
+<!--comment.wxml-->
+<view class="info comment bg-eee">
+  <form bindsubmit="formSubmit" bindreset="" report-submit="">
+    <view class="top pd15 bg-eee p-vcenter">
+      <view class="left c888">
+      评价等级 (三选一)
+      </view>
+    </view>
+    <view class="basic-info pdl17 bg-fff">
+      <radio-group class="radio-group" name="radio-group" bindchange="radioChange">
+        <label class="radio item p-vcenter" wx:for="{{items}}" wx:key="{{index}}">
+          <view class="left f17 fbold">{{item.name}}</view>
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="top pd15 bg-eee p-vcenter">
+      <view class="left c888 fbold">
+      房子描述
+      </view>
+    </view>
+     <view class="address pd15 f16 fbold c000 bg-fff">
+      <textarea auto-height='true' value='' name='evaluate' placeholder='请输入评价...' placeholder-class='placeholder' />
+    </view>
+    <view class="confirm pos-abs l0 r0 m-auto">
+      <!-- <button   class="bg-yellow cfff" formType="submit" disabled="disabled">您已评论过</button> -->
+      <button   class="bg-yellow cfff" formType="submit">确认发表</button>
+    </view>
+  </form>
+</view>

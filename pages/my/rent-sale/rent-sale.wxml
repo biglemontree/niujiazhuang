@@ -1,0 +1,117 @@
+<!--rent-sale.wxml-->
+<view class="rent-sale info bg-eee">
+  <form bindsubmit="submit"  enctype="multipart/form-data">
+    <view class="top pd15 bg-eee p-vcenter">
+      <view class="left c888">
+      出租/出售(可以双选)
+      </view>
+    </view>
+    <view class="basic-info pdl17 bg-fff">
+      <view class="rent-choose ">
+        <checkbox-group class="p-vcenter" bindchange="checkboxChange" name="checkbox">
+        <label wx:for-index="index" class="checkbox   p-vcenter" wx:for="{{checkgroups}}" wx:key="index">
+          <view class="rent-left f17 fbold">
+            {{item.value}}
+          </view>
+          <checkbox size="small" class="p-center" data-index="{{index}}"  value="{{item.name}}"  checked="{{item.checked}}"/>
+          <!--<image hidden="{{!item.checked}}" class="btn-yes" src="/images/me/btn_yes.png" mode="scaleToFill" binderror="" bindload=""></image>-->
+        </label>
+        </checkbox-group>
+      </view>
+
+    </view>
+    <view class="top pd15 bg-eee p-vcenter">
+      <view class="left c888 fbold">
+      房子信息
+      </view>
+    </view>
+    <view class="basic-info pdl17 bg-fff">
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          小区名称
+        </view>
+        <input class="value f17 " value="" placeholder="请填写名称" name="neighbourhood"></input>
+      </view>
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          房厅卫
+        </view>
+        <input class="value f17 " value="" name="houseStyle"></input>
+      </view>
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          楼层
+        </view>
+        <input class="value f17 " value="" maxlength='6' name="floor"></input>
+      </view>
+    </view>
+    <!-- 房子信息 -->
+    <view class="top pd15 bg-eee p-vcenter">
+      <view class="left c888 fbold">房子信息</view>
+    </view>
+    <view class="address pd15 f16 c000 bg-fff">
+      <textarea auto-height='true' value='' name="content" placeholder='备注说明' placeholder-class='placeholder' />
+    </view>
+    <!-- 房子图片 -->
+    <view class="top pd15 bg-eee p-vcenter">
+      <view class="left c888">房子图片</view>
+    </view>
+    <view class="house pd15 bg-fff">
+      <view class="add-pic p-center" bindtap="chooseImg">
+
+      </view>
+      <view class="pic-content">
+        <image src="{{item}}"  class="dpI bs-bb" wx:for="{{tempPath}}" wx:key="{{i}}" mode='widthFix' />
+      </view>
+    </view>
+    <!-- 个人信息 -->
+    <view class="top pd15 bg-eee p-vcenter">
+      <view class="left c888 fbold">
+      个人信息
+      </view>
+    </view>
+    <view class="basic-info pdl17 bg-fff">
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">姓名</view>
+        <input class="value f17 fbold" name="userName" value="" type="text" />
+      </view>
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          电话号码
+        </view>
+        <input class="value f17 fbold" name="phone" value="" type="number" />
+      </view>
+    </view>
+    <!-- 定价 -->
+    <view class="top pd15 bg-eee p-vcenter">
+      <view class="left c888 fbold">
+      定价
+      </view>
+    </view>
+    <view class="basic-info pdl17 bg-fff">
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">租金</view>
+        <input class="value f17 fbold" name="rent" value="" type="digit" />万
+      </view>
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          售价
+        </view>
+        <input class="value f17 fbold" name="deposit" value="" type="digit" />万
+      </view>
+    </view>
+    <!-- 地段标识 -->
+    <!-- <view class="top pd15 bg-eee p-vcenter bb-s">
+      <view class="left c888 fbold">
+      地段标识
+      </view>
+    </view>
+    <view>
+      <map id="map4select" longitude="{{longitude}}" latitude="{{latitude}}" scale="14"  bindcontroltap="controltap" controls="{{controls}}" markers="{{markers}}" bindmarkertap="markertap"  bindregionchange="regionchange" show-location style="width: 100%; height: 300px;">
+      </map>
+    </view> -->
+    <view class="confirm  l0 r0 m-auto">
+      <button  class="bg-yellow p-yellow" formType="submit">确 认</button>
+    </view>
+  </form>
+</view>

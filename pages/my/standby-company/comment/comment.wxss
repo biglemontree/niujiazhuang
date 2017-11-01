@@ -1,0 +1,60 @@
+/* comment.wxss */
+page {
+  height: 100%;
+  background:#efeff4;
+}
+.top {
+  justify-content: space-between;
+  height: 88rpx;
+}
+.top .left {
+  font-size:28rpx;
+}
+.icon image {
+  width:34rpx;
+  height:44rpx;
+}
+.radio-group label {
+  display: flex;
+  justify-content: space-between;
+}
+.radio-group label radio {
+
+}
+.address {
+  padding: 13rpx 30rpx 56rpx;
+}
+.address textarea {
+  width: 100%;
+}
+.item {
+    justify-content: space-between;
+  height: 86rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+.basic-info .left {
+  width: 140rpx;
+}
+.basic-info > view:last-child {
+  border: none;
+}
+.basic-info .value{
+  flex: 1;
+  margin-left: 42rpx;
+}
+.btn-yes {
+  display: none;
+}
+.rent-choose {
+  display: block;
+}
+.confirm {
+  bottom: 66rpx;
+  width: 690rpx;
+}
+/* add */
+.btn-yes {
+  width:26rpx;
+  height:19rpx;
+  margin-right: 30rpx;
+}

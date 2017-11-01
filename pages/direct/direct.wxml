@@ -1,0 +1,13 @@
+<!--direct.wxml-->
+<view class="direct bg-eee">
+  <view class='m-content '>
+    <navigator class="dpI bs-bb bg-fff" url="{{item.url}}" wx:for='{{items}}' wx:key='{{index}}' >
+      <view class="m-item ta-c dpI bs-bb">
+        <image src="{{item.icon}}" mode='widthFix' ></image>
+        <view class="m-name fbold">
+          {{item.moduleName}}
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

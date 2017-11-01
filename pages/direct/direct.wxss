@@ -1,0 +1,34 @@
+/* direct.wxss */
+/* m-content */
+.direct {
+    height: 100%;
+}
+.m-content {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+.m-content navigator {
+  width: 50%;
+  height: 33.3%;
+  border: 20rpx solid #efeff4;
+}
+.m-item {
+  width: 100%;
+  height: 100%;
+  padding-top: 60rpx;
+  flex-direction: column;
+  vertical-align: middle;
+}
+.m-item image {
+  width:74rpx;
+  height:88rpx;
+  margin-bottom: 20rpx;
+}
+.m-name {
+
+}
+.m-item:nth-child(2n+1) {
+  border-right: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+}

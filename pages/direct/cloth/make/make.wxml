@@ -1,0 +1,94 @@
+<!--make.wxml-->
+<!--info.wxml-->
+<view class="info bg-eee">
+  <form bindsubmit="submit" bindreset="" report-submit="">
+    <!-- 类型 -->
+    <view class="top pd15 bg-eee p-vcenter">
+      <view class="left c888">
+      类型
+      </view>
+    </view>
+    <view class="top pd15 bg-fff p-vcenter">
+      <view class="left fbold">
+      专属直供
+      </view>
+      <view class="left fbold">
+        {{props.directStore.title}}
+      </view>
+    </view>
+    <!-- 金额 -->
+    <view class="top pd15 bg-eee p-vcenter">
+      <view class="left c888">
+      金额
+      </view>
+    </view>
+    <view class="top pd15 bg-fff p-vcenter">
+      <view class="left fbold">
+      订单金额
+      </view>
+      <view class="left fbold c888">
+      ¥ <text class="p-yellow">{{props.directStore.deposit}}元</text>
+      </view>
+    </view>
+
+    <view class="top pd15 bg-eee p-vcenter">
+    </view>
+    <view class="basic-info pdl17 bg-fff">
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          姓名
+        </view>
+        <input class="value f17 fbold" name="name" value="" maxlength='10' type="text" />*
+      </view>
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          电话
+        </view>
+        <input class="value f17 fbold" name="phone" value="" type="number" />
+      </view>
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          地址
+        </view>
+        <input class="value f17 fbold" name="address" value="" type="text" />
+      </view>
+    </view>
+
+    <view class="top pd15 bg-eee p-vcenter">
+    </view>
+    <view class="basic-info pdl17 bg-fff">
+      <view class="item p-vcenter">
+        <view class="left f17 fbold">
+          见面时间
+        </view>
+        <!-- <input class="value f17 fbold" value="2017/07/17/日接送" type="number" /> -->
+        <view class="section value f17 p-gray">
+          <picker mode="date" name="meetTime" value="{{date}}" start="2015-09-01" end="2024-09-01" bindchange="bindDateChange">
+            <view class="picker p-gray">
+              {{date}}日见面
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <!-- 留言 -->
+    <view class="top pd15 bg-eee p-vcenter">
+      <view class="left c888">
+      留言
+      </view>
+    </view>
+    <view class="address pd15 f16 fbold c000 bg-fff">
+      <textarea auto-height='true' name="body" value='' />
+    </view>
+    <view class="confirm-roles f13 c888 p-center">
+      <checkbox-group name="checkbox">
+        <label for="" class="checkbox">
+          <checkbox name="ischecked" value="" checked="true"/>已阅读并同意 <navigator class="c-blue" url="../rule/rule" redirect="false" hover-class="navigator-hover">《依然小程序的协议》</navigator>
+        </label>
+      </checkbox-group >
+    </view>
+    <view class="confirm  l0 r0 m-auto">
+      <button  class="bg-yellow cfff" formType="submit">支付下单</button>
+    </view>
+  </form>
+</view>

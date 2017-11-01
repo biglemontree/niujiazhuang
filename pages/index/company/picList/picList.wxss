@@ -1,0 +1,21 @@
+/* pages/index/company/picList/picList.wxss */
+/* 施工记录 */
+.record {
+  padding: 30rpx;
+}
+.record-info {
+  margin: 10rpx 0 20rpx 0;
+}
+.record-info text {
+  margin-right: 40rpx;
+}
+.record-pic {
+  width: 100%;
+}
+.record-number {
+  justify-content: space-between;
+  height: 80rpx;
+}
+.record-value {
+  color: black;
+}

@@ -1,0 +1,22 @@
+<!--signin.wxml-->
+<view class="signin">
+  <view class="form pd10">
+    <view class="top-title fbold ta-c">
+      使用手机号登陆
+    </view>
+    <form class="pd10" bindsubmit="submit" bindreset="" report-submit="" >
+      <view class="tel p-vcenter f15 bb-s">
+        <text class="fbold">手机号</text>
+        <input name="phone" placeholder="请输入手机号码" value="" type="number" bindinput="setPhone" class="ta-c" placeholder-class='tel-num '/>
+        <button class="{{'cfff ' + 'bg-yellow'}}" size="mini"  bindtap="getCode" disabled="{{disabled}}">{{VerifyCode}}</button>
+      </view>
+      <view class="validate-message tel p-vcenter f15 bb-s">
+        <text class="fbold">验证码</text>
+        <input name="code" placeholder="请输入验证码" type="number" value="" class="ta-c" placeholder-class='tel-num '/>
+        <button class="cfff bg-yellow dpN" size="mini" type="button"  >获取验证码</button>
+      </view>
+      <button class="cfff bg-yellow signin-btn" size="default"  formType="submit">登陆</button>
+
+    </form>
+  </view>
+</view>

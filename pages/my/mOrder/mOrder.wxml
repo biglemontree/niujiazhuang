@@ -1,0 +1,25 @@
+<!--mOrder.wxml-->
+<view class="m-order">
+  <view class="item bb-s" wx:for="{{UserOrderList}}" wx:key="index">
+    <view class="m-left p-center">
+      <image class="" src="/images/my_order/btn_1.png" ></image>
+    </view>
+    <view class="m-middle">
+      <view class="title fbold">
+        {{item.moduleName}}
+      </view>
+      <view class="time f13">
+        {{item.createTime}}
+      </view>
+      <view class="status f13 p-yellow">
+        {{item.status==0? '进行中': '已完成'}}
+      </view>
+    </view>
+    <view class="m-right ta-c" data-phone="{{item.phone}}" bindtap="serverCall">
+      <image src="/images/btn_tel.png" mode='widthFix'></image>
+      <view class="server f10 fbold">
+        服务与售后
+      </view>
+    </view>
+  </view>
+</view>

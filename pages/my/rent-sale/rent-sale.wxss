@@ -1,0 +1,97 @@
+/* rent-sale.wxss */
+/* info.wxss */
+page {
+  height: 100%;
+  background:#efeff4;
+}
+.top {
+  justify-content: space-between;
+  height: 88rpx;
+}
+.top .left {
+  font-size:28rpx;
+}
+/* checkbox占满剩余 */
+.rent-choose checkbox{
+  /*display: flex;
+  flex: 1*/
+  width: 100rpx;
+  height: 100rpx;
+}
+.rent-choose label image {
+
+}
+.address {
+  padding: 13rpx 30rpx 56rpx;
+}
+.address textarea {
+  width: 100%;
+}
+.item {
+  height: 86rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+.basic-info .left {
+  width: 140rpx;
+}
+.basic-info > view:last-child {
+  border: none;
+}
+.basic-info .value{
+  flex: 1;
+  margin-left: 42rpx;
+}
+
+.confirm {
+  bottom: 35rpx;
+  width: 690rpx;
+}
+.confirm button {
+
+}
+/*rent-sale 私有*/
+.rent-choose {
+  justify-content: space-between;
+}
+.btn-yes {
+  width:26rpx;
+  height:19rpx;
+  margin-right: 30rpx;
+}
+.placeholder {
+  color: #b2b2b2;
+  font-size: 34rpx;
+}
+.house {
+  padding: 30rpx;
+}
+.add-pic {
+  width:114rpx;
+  height:114rpx;
+  border:1px solid #cccccc;
+}
+.add-pic::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 6rpx;
+  height: 56rpx;
+  background-color: #eee;
+}
+.add-pic::after {
+  content: '';
+  display: block;
+  width: 50rpx;
+  height: 6rpx;
+  background-color: #eee;
+}
+.pic-content {
+  margin-top: 20rpx;
+}
+.pic-content image {
+  width: 25%;
+  height: 160rpx;
+  padding: 10rpx;
+  border: 1px solid #cccccc;
+
+}

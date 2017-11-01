@@ -1,0 +1,76 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true
+	},
+	"compileType": "weapp",
+	"libVersion": "1.5.3",
+	"appid": "wx70ce63723579f413",
+	"projectname": "%E7%89%9B%E5%AE%B6%E5%BA%84",
+	"condition": {
+		"weapp": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/index/signin/signin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "衣柜定制",
+					"pathName": "pages/direct/cloth/cloth",
+					"query": "moduleId=76113237"
+				},
+				{
+					"id": -1,
+					"name": "预约定制",
+					"pathName": "pages/direct/cloth/make/make",
+					"query": "moduleId=76113237&commodityId=42323147"
+				},
+				{
+					"id": -1,
+					"name": "出租出售",
+					"pathName": "pages/my/rent-sale/rent-sale",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/my/my",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "备选公司",
+					"pathName": "pages/my/standby-company/standby-company",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价",
+					"pathName": "pages/my/standby-company/comment/comment",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "公司详情",
+					"pathName": "pages/index/company/company",
+					"query": "companyId=19896544"
+				}
+			]
+		},
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		}
+	}
+}

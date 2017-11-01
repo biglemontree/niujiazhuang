@@ -1,0 +1,147 @@
+<!--company.wxml-->
+<view class="">
+<!-- tab content -->
+<view class="tab">
+  <view class="tab-left bb-s" bindtap="tabFun">
+    <view class="p-center f15 {{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-id="0">公司档案</view>
+    <view class="p-center f15 {{tabArr.curHdIndex=='1'? 'active' : ''}}" id="tab-hd02" data-id="1">施工记录</view>
+    <view class="p-center f15 {{tabArr.curHdIndex=='2'? 'active' : ''}}" id="tab-hd03" data-id="2">业主口碑</view>
+  </view>
+
+  <view class="tab-right">
+    <!-- 公司档案-->
+    <view class="right-item company-infos {{tabArr.curBdIndex=='0'? 'active' : ''}}">
+      <view class="company-name fbold">
+        {{companyInfo.cpNname}}
+      </view>
+      <view class="company-desc f15 p-gray">
+        {{companyInfo.cpWork}}
+      </view>
+      <image class="company-pic bs-bb" wx:for="{{companyInfo.companyImageList}}" wx:key="index" src="{{item.url}}" mode='widthFix' binderror="" style="width:{{imageSize[index].width}}rpx; height:{{imageSize[index].height}}rpx" data-index="{{index}}" mode="scaleToFill" bindload="imageLoad"></image>
+      <view class="company-introduce f17 py-10">
+        <text class='fbold'>【公司简介】</text>{{companyInfo.cpContent}}
+      </view>
+      <!-- 大门  -->
+      <view>
+        <view wx:for="{{companyInfo.companyDoorList}}" wx:for-item="door" wx:key="index">
+          <image class="company-pic bs-bb"  src="{{door.url}}" mode='widthFix'></image>
+        </view>
+        <view class="company-introduce f17">
+
+        </view>
+        <view class="company-introduce f17 py-10">
+          <text class='fbold'>【公司大门】</text>{{companyInfo.companyDoorList[0].doorContent}}
+        </view>
+      </view>
+      <!-- 办公区  -->
+      <view wx:for="{{companyInfo.officeList}}" wx:for-item="office" wx:key="index">
+        <image class="company-pic"  src="{{office.url}}" mode='widthFix'></image>
+      </view>
+      <view class="company-introduce f17">
+
+      </view>
+      <view class="company-introduce f17 py-10">
+        <text class='fbold'>【公司办公区】</text>{{companyInfo.officeList[0].officeContent}}
+      </view>
+      <!-- 其他  -->
+      <view wx:for="{{companyInfo.otherList}}" wx:for-item="other" wx:key="index">
+        <image class="company-pic"  src="{{other.url}}" mode='widthFix'></image>
+      </view>
+      <view class="company-introduce f17">
+
+      </view>
+      <view class="company-introduce f17 py-10">
+        <text class='fbold'>【其他】</text>{{companyInfo.otherList[0].otherContent}}
+      </view>
+      <!-- 公司信息 -->
+      <view class="top pd15 bg-eee p-vcenter">
+        <view class="left c888">公司信息</view>
+      </view>
+      <view class="top pd15 p-vcenter bg-fff">
+        <view class="left fbold">地址</view>
+        <view class="left fbold"> {{companyInfo.cpAddress}}</view>
+      </view>
+      <!-- 公司规模 -->
+      <view class="top pd15 bg-eee p-vcenter">
+        <view class="left c888">公司规模</view>
+      </view>
+      <view class="basic-info pdl17 bg-fff">
+        <view class="item p-vcenter">
+          <view class="left f17">公司经验</view>
+          <view class="value f17" >{{companyInfo.cpExperience}}年</view>
+        </view>
+        <view class="item p-vcenter">
+          <view class="left f17">设计师人数</view>
+          <view class="value f17" >{{companyInfo.cpDesigner}}个</view>
+        </view>
+        <view class="item p-vcenter">
+          <view class="left f17">占地面积</view>
+          <view class="value f17" >{{companyInfo.cpArea}}平方米</view>
+        </view>
+        <view class="item p-vcenter">
+          <view class="left f17 ">运作能力</view>
+          <view class="value f17" >{{companyInfo.cpAbility}}/年</view>
+        </view>
+        <view class="item p-vcenter">
+          <view class="left f17 ">工程监理</view>
+          <view class="value f17" >{{companyInfo.cpGcjl}}个</view>
+        </view>
+        <view class="item p-vcenter">
+          <view class="left f17 ">公司员工</view>
+          <view class="value f17" >{{companyInfo.cpEmpCount}}个</view>
+        </view>
+      </view>
+    </view>
+    <!-- 案例 -->
+    <view class="right-item record {{tabArr.curBdIndex=='1'? 'active' : ''}}" >
+      <view class="company-record bb-s" wx:for="{{GdExampleInfo}}" wx:key="{{index}}">
+        <navigator url="{{'./picList/picList?gdExampleId=' + item.gdId + '&neighbourhood=' + item.neighbourhood}}" hover-class="none">
+          <view class="record-name f17 fbold p-vbetween py-10">
+            <view>{{item.neighbourhood}}</view>
+            <image wx:if='{{isBackup==0}}' src='/images/dianzan.png' class='goods' catchtap='notLike' />
+            <image wx:if='{{isBackup==1&&item.likesStatus==1}}' src='/images/d_active.png' class='goods' data-gdId='{{item.gdId}}' data-index='{{index}}' catchtap='giveGoods' />
+            <image wx:if='{{isBackup==1&&item.likesStatus==0}}' src="/images/dianzan.png" class='goods' data-gdId='{{item.gdId}}' data-index='{{index}}' catchtap='giveGoods' />
+          </view>
+          <view class="record-info f15 p-vcenter p-gray">
+            <text class="nowrap">{{item.houseStyle}}</text>
+            <text class="nowrap">{{item.area}}平米</text>
+            <text class="nowrap">{{(item.budget)}}万</text>
+          </view>
+          <image class="record-pic" src="{{item.href}}" mode='widthFix' ></image>
+          <view class="record-number p-vcenter p-gray">
+            <view class="record-view f12">
+              浏览次数: <text class="record-value fbold f15">{{item.watchCount}}</text>
+            </view>
+            <view class="record-like f12" >
+              点赞次数: <text class="record-value fbold f15">{{item.likesCount}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 评价 -->
+    <view class="right-item {{tabArr.curBdIndex=='2'? 'active' : ''}}">
+      <view wx:for="{{evaluateList}}" wx:key="index">
+        <view class="user-comment p-vcenter">
+          <view class="user-avator">
+            <image src="/images/logo.png" mode='widthFix' binderror="" bindload=""></image>
+          </view>
+          <view class="user-name f15 fbold">
+            {{item.userName}}
+          </view>
+          <view class="time f12 p-gray">
+            {{item.createTime}}
+          </view>
+        </view>
+        <view class="user-content f13 bb-s">
+          {{item.evaluate}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="confirm pos-fix l0 r0 m-auto" bindtap="addList">
+    <button  class="bg-yellow cfff" formType="submit">加入备选</button>
+  </view>
+</view>
+</view>

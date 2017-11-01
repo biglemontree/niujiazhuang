@@ -1,0 +1,46 @@
+/* mOrder.wxss */
+page {
+  height: 100%;
+}
+.m-order {
+  padding: 0 20rpx;
+}
+.item {
+  display: flex;
+  align-items: center;
+  padding: 40rpx 0;
+}
+.m-left {
+  flex: 1;
+}
+.m-left image {
+  width: 85rpx;
+  height: 85rpx;
+}
+.m-middle {
+  flex: 3;
+}
+.title {
+  font-size:32rpx;
+  color:#1c1c1c;
+  letter-spacing:0;
+}
+.time {
+  color:#858585;
+  letter-spacing:0;
+  line-height:34rpx;
+}
+.status {
+  letter-spacing:0;
+  line-height:34rpx;
+}
+.m-right {
+  flex: 1;
+}
+.m-right image {
+  width:64rpx;
+  height:64rpx;
+}
+.server {
+  color:#000000;
+}

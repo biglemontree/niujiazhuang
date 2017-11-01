@@ -1,0 +1,37 @@
+/* standby-company.wxss */
+page {
+    background-color: #efeff4;
+}
+.top {
+    justify-content: space-between;
+    padding: 15rpx 0rpx;
+}
+.comment {
+    margin-top: 10rpx;
+}
+.comment text{
+    display: inline-block;
+    padding: 4rpx 30rpx;
+    border-radius: 20rpx;
+    border: 2rpx solid #ff6801;
+    margin-right: 20rpx;
+}
+.right {
+    align-self: flex-end;
+}
+.right image {
+    width:64rpx;
+    height:64rpx;
+}
+.barnner image {
+    width: 100%;
+}
+.bottom {
+    justify-content: space-between;
+    padding: 30rpx 0rpx;
+}
+.b-right image {
+    width:37rpx;
+    height:32rpx;
+    margin-right: 16rpx;
+}

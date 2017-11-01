@@ -1,0 +1,22 @@
+/* pages/index/search/search.wxss */
+page {
+  background-color: #fafafa;
+}
+.container {
+  height: 100%;
+}
+.search {
+  height: 100rpx;
+  align-items: flex-end;
+}
+.search-name {
+  text-align: center;
+  font-size: 28rpx;
+  color: #b3b3b3;
+}
+.search input {
+  width: 95%;
+  background-color: #fff;
+  border-radius: 30rpx;
+  margin-bottom: 20rpx;
+}

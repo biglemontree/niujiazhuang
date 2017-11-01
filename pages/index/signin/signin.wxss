@@ -1,0 +1,28 @@
+/* signin.wxss */
+page {
+  background-color: #efeff4;
+}
+.top-title {
+  font-size: 40rpx;
+  padding-top: 100rpx;
+  margin-bottom: 100rpx;
+}
+.tel {
+  /*align-items: flex-start;*/
+  padding-bottom: 10rpx;
+}
+.validate-message {
+  padding-top: 20rpx;
+}
+.validate-message button{
+  visibility: hidden;
+}
+.tel-num {
+  margin-left: 40rpx;
+}
+.tel input {
+  flex: 1;
+}
+.signin-btn {
+  margin-top: 90rpx;
+}

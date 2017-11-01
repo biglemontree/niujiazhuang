@@ -1,0 +1,134 @@
+/* cloth.wxss */
+page {
+  font-family:PingFangSC-Regular,Helvetica,STHeiti STXihei,Microsoft JhengHei,Microsoft YaHei,Arial;
+  background-color: #ECEEF3;
+}
+swiper {
+  /*height: 500rpx;*/
+}
+swiper image{
+    width: 100%;
+    /*height: 100%;*/
+}
+swiper-slide-active { height:auto}
+.desc {
+  margin: 8rpx 0 ;
+}
+.info {
+  padding: 18rpx 20rpx;
+}
+.server-info {
+    position: relative;
+  margin: 15rpx 0 11rpx 0;
+}
+.p-dot {
+  color:#b4b4b4;
+  margin-right: 64rpx;
+  text-indent: 10rpx;
+}
+.price {
+  text-indent: 5rpx;
+}
+ .p-dot::before {
+   content: '';
+   display: block;
+   border-radius: 50%;
+   left: 10rpx;
+   width: 14rpx;
+   height: 14rpx;
+   margin-right: 11rpx;
+   background-color: #b4b4b4;
+}
+.p-bg::after {
+  height: 24rpx;
+}
+/* tab */
+.tab-left{
+  box-sizing: border-box;
+  display: flex;
+  height: 88rpx;
+  align-items: center;
+  line-height: 160%;
+}
+.tab-left view{
+  flex: 1;
+  height: 72rpx;
+  text-align: center;
+  margin-right: 0;
+}
+.tab-left view::before {
+  display: none;
+}
+.tab-left view:first-child {
+  border-right: solid 1px #d8d8d8;
+}
+.tab-left .active{
+  color: black;
+}
+.tab-left .active::before{
+  background-color: #ff6801;
+  display: block;
+}
+.tab-right{
+  margin-bottom: 96rpx;
+}
+.tab-right .right-item{
+  padding-left: 15rpx;
+  display: none;
+  transition: all 1s ease;
+}
+.tab-right .right-item.active{
+  display: block;
+}
+.tab-right .commodity {
+  width: 100%;
+}
+.user-comment {
+  justify-content: space-between;
+  padding: 47rpx 24rpx 20rpx 24rpx;
+}
+.user-name {
+  flex: 1;
+  text-align: left;
+  margin-left: 20rpx;
+}
+.user-avator image {
+  width: 65rpx;
+  height: 65rpx;
+}
+.user-content {
+  padding: 0 20rpx 20rpx 0rpx;
+  margin-left: 105rpx;
+  margin-bottom: 10rpx;
+}
+/* footer */
+.footer {
+  bottom: 0;
+}
+.footer > view {
+
+  height: 96rpx;
+}
+.make-order {
+  width: 620rpx;
+}
+.asker {
+  width:130rpx;
+}
+.asker image {
+  width:48rpx;
+  height:48rpx;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 10rpx);
+
+}
+.asker button {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+}

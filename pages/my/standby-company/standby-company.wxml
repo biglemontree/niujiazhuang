@@ -1,0 +1,43 @@
+<!--standby-company.wxml-->
+<view>
+  <navigator url='/pages/index/company/company?companyId={{item.cpId}}' wx:for="{{companyList}}" wx:key="{{index}}">
+
+    <view class="item pd10" >
+
+    <view class='top p-vcenter'>
+      <view>
+        <view class="f17 c000 fbold">
+          {{item.cpName}}
+        </view>
+      </view>
+
+      <view class="right" wx:if="{{item.status == 0}}">
+        <image src='/images/me/btn_tel.png' mode='widthFix'></image>
+      </view>
+      <view class="right" wx:if="{{item.status == 1}}" data-phone="{{item.phone}}" catchtap="makeCall">
+        <image src='/images/btn_tel.png' mode='widthFix'></image>
+      </view>
+    </view>
+    <view class="barnner">
+      <image src='{{item.photo}}' mode='widthFix'></image>
+    </view>
+    <view class="bottom p-vcenter">
+      <view class="f12">
+        <text class="p-gray">地址:\r  </text>
+        <text class="fbold">{{item.cpAddress}}</text>
+      </view>
+      <view class='' >
+        <view  open-type='redirect' class="b-right p-vcenter" wx:if="{{item.evalStatus == 1}}" catchtap='goToComment' data-url="./comment/comment?companyId={{item.cpId}}&evalStatus={{item.evalStatus}}" >
+          <image src='/images/me/btn_comment.png' mode='widthFix'></image>
+          <text class="p-gray f12">评论</text>
+        </view>
+        <view class="b-right p-vcenter"  wx:if="{{item.evalStatus == 0}}">
+          <image src='/images/me/comment.png' ></image>
+          <text class="p-gray f12">评论</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  </navigator>
+</view>

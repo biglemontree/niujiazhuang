@@ -1,0 +1,98 @@
+/**index.wxss**/
+page {
+  background-color: #fafafa;
+}
+.container {
+  height: 100%;
+}
+.search {
+  height: 100rpx;
+  align-items: flex-end;
+}
+.search-name {
+  text-align: center;
+  font-size: 28rpx;
+  color: #b3b3b3;
+}
+.search input {
+  width: 95%;
+  background-color: #fff;
+  border-radius: 30rpx;
+  margin-bottom: 20rpx;
+}
+.company-wrap {
+  /*margin-top: 40rpx;*/
+  height: 80%;
+  width: 100%;
+  /*overflow: auto;*/
+}
+swiper {
+  height: 1000rpx;
+}
+.slide-image image {
+  width: 100%;
+}
+.slide-image {
+  overflow: auto;
+}
+swiper-item {
+  width: 90%;
+  overflow: auto;
+  /*margin-left: 5%;*/
+}
+.c-desc {
+  font-size: 52rpx;
+}
+.c-name {
+  margin-top: -30rpx;
+  padding: 0;
+}
+.c-name text{
+  padding-bottom: 30rpx;
+  border-bottom: 4rpx solid #ccc;
+}
+.c-data {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30rpx;
+}
+.c-data  .c-satify > view {
+  text-align: center;
+  flex-direction: column;
+}
+.c-center {
+  margin: 15rpx 0;
+}
+.color-bar {
+  width: 50rpx;
+  height: 10rpx;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  background-color: #ff6801;
+}
+
+.btn-group {
+  justify-content: space-around;
+  margin-top: 30rpx;
+}
+.btn-group .backup, .btn-group navigator {
+  width: 198rpx;
+  height: 62rpx;
+  font-size: 30rpx;
+  line-height: 62rpx;
+  text-align: center;
+  border:1px solid #ff8162;
+  border-radius: 60rpx;
+}
+.btn-group navigator {
+
+}
+.c-address {
+  margin-top: 30rpx;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+.c-address .address-left image {
+  width: 25rpx;
+  height: 32rpx;
+}

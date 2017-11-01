@@ -1,0 +1,35 @@
+page {
+  height: 100%;
+  background:#efeff4;
+}
+.top {
+  justify-content: space-between;
+  height: 88rpx;
+}
+.top .left {
+  font-size:28rpx;
+}
+.icon image {
+  width:34rpx;
+  height:44rpx;
+}
+.address {
+  padding: 13rpx 30rpx 56rpx;
+}
+.item {
+  height: 86rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+.item .unit {
+  margin-right: 20rpx;
+}
+.basic-info .left {
+  width: 140rpx;
+}
+.basic-info > view:last-child {
+  border: none;
+}
+.basic-info .value{
+  flex: 1;
+  margin-left: 42rpx;
+}
