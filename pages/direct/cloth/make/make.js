@@ -6,7 +6,7 @@ Page(observer({
     directStore: require('../../../../stores/direct').default
   },
   data: {
-    date: '2016-09-01',
+    date: '2017-11-01',
 
   },
 
@@ -92,12 +92,5 @@ Page(observer({
       .catch(err => {
         console.log('获取orderId失败: ', err)
       })
-
-
-
-
-
-
-
   }
 }))

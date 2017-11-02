@@ -61,6 +61,12 @@
 					"name": "公司详情",
 					"pathName": "pages/index/company/company",
 					"query": "companyId=19896544"
+				},
+				{
+					"id": 8,
+					"name": "个人资料",
+					"pathName": "pages/my/info/info",
+					"query": ""
 				}
 			]
 		},

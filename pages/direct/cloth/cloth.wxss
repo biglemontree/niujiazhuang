@@ -43,6 +43,10 @@ swiper-slide-active { height:auto}
   height: 24rpx;
 }
 /* tab */
+.no-margin {
+  margin: 0;
+  display: block;
+}
 .tab-left{
   box-sizing: border-box;
   display: flex;
@@ -70,7 +74,7 @@ swiper-slide-active { height:auto}
   display: block;
 }
 .tab-right{
-  margin-bottom: 96rpx;
+  padding-bottom: 96rpx;
 }
 .tab-right .right-item{
   padding-left: 15rpx;

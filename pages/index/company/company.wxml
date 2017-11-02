@@ -17,10 +17,10 @@
       <view class="company-desc f15 p-gray">
         {{companyInfo.cpWork}}
       </view>
-      <image class="company-pic bs-bb" wx:for="{{companyInfo.companyImageList}}" wx:key="index" src="{{item.url}}" mode='widthFix' binderror="" style="width:{{imageSize[index].width}}rpx; height:{{imageSize[index].height}}rpx" data-index="{{index}}" mode="scaleToFill" bindload="imageLoad"></image>
       <view class="company-introduce f17 py-10">
         <text class='fbold'>【公司简介】</text>{{companyInfo.cpContent}}
       </view>
+      <image class="company-pic bs-bb" wx:for="{{companyInfo.companyImageList}}" wx:key="index" src="{{item.url}}" mode='widthFix' binderror=""  data-index="{{index}}"  bindload="imageLoad"></image>
       <!-- 大门  -->
       <view>
         <view wx:for="{{companyInfo.companyDoorList}}" wx:for-item="door" wx:key="index">
@@ -35,7 +35,7 @@
       </view>
       <!-- 办公区  -->
       <view wx:for="{{companyInfo.officeList}}" wx:for-item="office" wx:key="index">
-        <image class="company-pic"  src="{{office.url}}" mode='widthFix'></image>
+        <image class="company-pic bs-bb"  src="{{office.url}}" mode='widthFix'></image>
       </view>
       <view class="company-introduce f17">
 
@@ -45,7 +45,7 @@
       </view>
       <!-- 其他  -->
       <view wx:for="{{companyInfo.otherList}}" wx:for-item="other" wx:key="index">
-        <image class="company-pic"  src="{{other.url}}" mode='widthFix'></image>
+        <image class="company-pic bs-bb"  src="{{other.url}}" mode='widthFix'></image>
       </view>
       <view class="company-introduce f17">
 
@@ -107,7 +107,7 @@
             <text class="nowrap">{{item.area}}平米</text>
             <text class="nowrap">{{(item.budget)}}万</text>
           </view>
-          <image class="record-pic" src="{{item.href}}" mode='widthFix' ></image>
+          <image class="record-pic" src="{{item.href}}" mode='center' ></image>
           <view class="record-number p-vcenter p-gray">
             <view class="record-view f12">
               浏览次数: <text class="record-value fbold f15">{{item.watchCount}}</text>

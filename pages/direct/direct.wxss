@@ -21,8 +21,8 @@
   vertical-align: middle;
 }
 .m-item image {
-  width:74rpx;
-  height:88rpx;
+  width:90rpx;
+  /*height:88rpx;*/
   margin-bottom: 20rpx;
 }
 .m-name {

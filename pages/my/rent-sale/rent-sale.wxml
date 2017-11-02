@@ -18,7 +18,6 @@
         </label>
         </checkbox-group>
       </view>
-
     </view>
     <view class="top pd15 bg-eee p-vcenter">
       <view class="left c888 fbold">
@@ -36,7 +35,9 @@
         <view class="left f17 fbold">
           房厅卫
         </view>
-        <input class="value f17 " value="" name="houseStyle"></input>
+        <input class="value f17 " value="" placeholder="几" type='number' name="house" />房
+        <input class="value f17 " value="" placeholder="几" type='number' name="cook" />卫
+        <input class="value f17 " value="" placeholder="几" type='number' name="hall" />厅
       </view>
       <view class="item p-vcenter">
         <view class="left f17 fbold">
@@ -111,7 +112,7 @@
       </map>
     </view> -->
     <view class="confirm  l0 r0 m-auto">
-      <button  class="bg-yellow p-yellow" formType="submit">确 认</button>
+      <button  class="bg-yellow cfff" formType="submit">确 认</button>
     </view>
   </form>
 </view>

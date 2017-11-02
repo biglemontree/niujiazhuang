@@ -39,6 +39,8 @@ page {
 .pd10 {padding-left: 20rpx;padding-right: 20rpx;}
 .pd15 {padding-left: 30rpx;padding-right: 30rpx;}
 .py-10 {padding-top: 20rpx; padding-bottom: 20rpx;}
+.pr-20 {padding-right: 40rpx;}
+.pt-5rpx {padding-top: 5rpx;}
 .pdl17 {padding-left: 34rpx;}
 /*布局*/
 .pos-fix{position:fixed}.pos-rel{position:relative}.pos-abs{position:absolute}.pos-stc{position:static}

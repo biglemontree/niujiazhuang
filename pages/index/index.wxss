@@ -4,6 +4,9 @@ page {
 }
 .container {
   height: 100%;
+  background-color: rgba(170,170,170,0.30);
+  /*background-color: #d8d8d8;*/
+
 }
 .search {
   height: 100rpx;
@@ -19,24 +22,41 @@ page {
   background-color: #fff;
   border-radius: 30rpx;
   margin-bottom: 20rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  display: block;
 }
 .company-wrap {
   /*margin-top: 40rpx;*/
-  height: 80%;
+  height: calc(100% - 100rpx);
+  padding: 40rpx 0;
   width: 100%;
+  box-sizing: border-box;
   /*overflow: auto;*/
 }
 swiper {
-  height: 1000rpx;
+  height:100%;
+  width: 90%;
+  background:#ffffff;
+  border:1px solid #dddddd;
+  box-shadow:0 4px 8px 0 rgba(170,170,170,0.50);
+  margin-left: 5%;
+  /*margin-top: 90rpx;*/
+}
+.face-img {
+  height: 35%;
+  overflow: auto;
 }
 .slide-image image {
   width: 100%;
 }
 .slide-image {
   overflow: auto;
+  height: 100%;
 }
 swiper-item {
-  width: 90%;
+  width: 90% ;
+  height: 100%;
   overflow: auto;
   /*margin-left: 5%;*/
 }

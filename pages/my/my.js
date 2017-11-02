@@ -55,7 +55,7 @@ Page({
   },
   calling(e){
     console.log(e);
-    let phone = '15200872787';
+    let phone = '4006159008';
     wx.makePhoneCall({
       phoneNumber: phone, //仅为示例，并非真实的电话号码
       fail(msg){

@@ -6,7 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    address: ''
+    address: '',
+    date: '2017-11-01',
+    checkgroups: [
+      {name: '5天内', value: '5天内'},
+      {name: '10天内', value: '10天内'},
+      {name: '15天内', value: '15天内', checked: 'true'},
+    ]
   },
   choosePos(){
     const  _this = this
@@ -20,6 +26,14 @@ Page({
         })
       }
     })
+  },
+  bindDateChange: function(e) {
+    this.setData({
+      date: e.detail.value
+    })
+  },
+  radioChange: function(e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
   },
   onLoad(){
     const user = wx.getStorageSync('user')
@@ -49,6 +63,7 @@ Page({
       let user = value.data
       let params = {
         ...userinfo,
+        // houseStyle: `${value.house}房${value.hall}厅${value.cook}卫`,
         id: user.id,
         phone: +user.phone,
         token: user.token

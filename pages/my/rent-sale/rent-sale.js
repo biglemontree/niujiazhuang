@@ -128,7 +128,7 @@ Page({
       if (!result) {
         return
       }
-      let isNull = value.neighbourhood && value.houseStyle && value.floor
+      let isNull = value.neighbourhood && value.house && value.floor
       if(!isNull){
         wechat.showToast('信息不完善')
         return
@@ -140,7 +140,7 @@ Page({
         sell: hasSell? 1 : 0,
         // ...value,
         neighbourhood: value.neighbourhood,
-        houseStyle: value.houseStyle,
+        houseStyle: `${value.house}房${value.hall}厅${value.cook}卫`,
         floor: value.floor,
         content: value.content,
         userName: value.userName,

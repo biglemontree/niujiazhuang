@@ -36,7 +36,7 @@
       <view class="tab-right">
         <!-- 产品介绍 -->
         <view class="right-item {{tabArr.curBdIndex=='0'? 'active' : ''}}">
-          <image class="commodity bs-bb" wx:for="{{photoInfo}}" wx:key="{{index}}" src="{{item.href}}" mode='widthFix' binderror="" bindload=""></image>
+          <image class="commodity bs-bb no-margin" wx:for="{{photoInfo}}" wx:key="{{index}}" src="{{item.href}}" mode='widthFix' binderror="" bindload=""></image>
         </view>
         <!-- 用户评价 -->
         <view class="right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}" wx:for="{{evaluateList}}" wx:key="{{index}}">

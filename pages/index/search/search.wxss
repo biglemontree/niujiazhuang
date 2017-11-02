@@ -19,4 +19,6 @@ page {
   background-color: #fff;
   border-radius: 30rpx;
   margin-bottom: 20rpx;
+  height: 65rpx;
+  line-height: 65rpx;
 }

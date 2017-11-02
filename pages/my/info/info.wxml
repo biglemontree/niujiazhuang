@@ -40,7 +40,10 @@
         <view class="left f17 fbold">
           户型
         </view>
-        <input class="value f17 fbold" name="houseStyle" value="{{userinfo.houseStyle}}"></input>
+        <input class="value f17 fbold" name="houseStyle" value="{{userinfo.houseStyle}}" placeholder='房卫厅'></input>房卫厅
+        <!-- <input class="value f17 " value="" placeholder="几" type='number' name="house" />房
+        <input class="value f17 " value="" placeholder="几" type='number' name="cook" />卫
+        <input class="value f17 " value="" placeholder="几" type='number' name="hall" />厅 -->
       </view>
       <view class="item p-vcenter">
         <view class="left f17 fbold">
@@ -55,11 +58,24 @@
         <input class="value f17 fbold" placeholder="单位: 万元" name="budget" value="{{userinfo.budget}}" type="digit"></input>
         <text class="f17 fbold unit">万</text>
       </view>
-      <view class="item p-vcenter">
-        <view class="left f17 fbold">
-          计划时间
-        </view>
-        <input class="value f17 fbold" name="planTime" value="{{userinfo.planTime}}"></input>
+    </view>
+    <view class="top pd15 bg-eee p-vcenter">
+      <view class="left c888 fbold">
+        计划时间
+      </view>
+    </view>
+
+    <view class="basic-info pdl17 bg-fff py-10">
+        <view class="rent-choose ">
+          <radio-group class="p-vcenter" bindchange="radioChange" name="planTime">
+            <label wx:for-index="index" class="radio   p-vcenter pr-20" wx:for="{{checkgroups}}" wx:key="index">
+              <!-- <view class="rent-left f17 fbold">
+              {{item.value}}
+            </view> -->
+            <radio size="small" class="p-center" data-index="{{index}}"  value="{{item.name}}"  checked="{{item.checked}}"/>{{item.value}}
+            <!--<image hidden="{{!item.checked}}" class="btn-yes" src="/images/me/btn_yes.png" mode="scaleToFill" binderror="" bindload=""></image>-->
+          </label>
+        </radio-group>
       </view>
     </view>
     <view class="confirm pos-abs l0 r0 m-auto">

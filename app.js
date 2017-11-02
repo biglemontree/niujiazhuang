@@ -48,6 +48,7 @@ App({
       if (res.data.code === 1) {
         wx.hideToast()
         wechat.showToast('加入备选成功', 'success')
+        this.setData({test:"test1"}) // 强制刷新
       }else if (res.data.code === 2) {
         wechat.showModal('提示!', '受邀已达上限')
       } else if (res.data.code === 0) {

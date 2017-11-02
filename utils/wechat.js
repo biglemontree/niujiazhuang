@@ -1,6 +1,6 @@
-const Promise = require('./bluebird')
 
 function fetch(api, path, params) {
+const Promise = require('./bluebird')
     return new Promise( (resolve, reject) => {
         wx.request({
             url: `${api}/${path}`,

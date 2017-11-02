@@ -10,23 +10,25 @@
       <!-- <view>测试</view> -->
     </navigator>
   </view>
-  <view class="bg-fa company-wrap" wx:if='{{isShow}}'>
+  <view class=" company-wrap" wx:if='{{isShow}}'>
       <swiper indicator-dots="{{indicatorDots}}"
       autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{current}}">
         <block wx:for="{{list}}" wx:key="index">
             <swiper-item>
               <view class="slide-image">
-                <image src="{{item.faceImg}}" class="slide-image" width="355" height="150" mode='aspectFill'/>
+                <view class='face-img'>
+                  <image src="{{item.faceImg}}" class="slide-image" width="355" height="150" mode='widthFix'/>
+                </view>
                 <view class="c-infos ">
                   <view class="p-rcenter c-desc fbold truncate">{{item.cpWork}}</view>
                   <view class="p-rcenter f14 c-name">
-                    <text class='truncate'>
+                    <text class='truncate pd10'>
                       {{item.cpNname}}
                     </text>
                   </view>
                   <view class="c-data">
-                    <view class="c-satify">
-                      <view class="">
+                    <view class="c-satify fbold">
+                      <view class="fbold">
                         {{item.satisfactionRate}}
                       </view>
                       <view class="f10 c-center ">
@@ -35,35 +37,44 @@
                       <view class="color-bar">
                       </view>
                     </view>
-                    <view class="c-deal">
-                      <view class="">
+                    <view class="c-deal fbold">
+                      <view class="ta-c">
                         {{item.finishSize}}
                       </view>
-                      <view class="f10 p-gray c-center">
-                        成交量(次)
+                      <view class="f10 c-center fbold">
+                        成交量(套)
                       </view>
                       <view class="color-bar">
                       </view>
                     </view>
-                    <view class="c-like">
-                      <view class="">
+                    <view class="c-like fbold">
+                      <view class="ta-c fbold">
                         {{item.evaluleSize}}
                       </view>
-                      <view class="f10 p-gray c-center">
-                        评论(人)
+                      <view class="f10 c-center fbold">
+                        评论(次)
                       </view>
                       <view class="color-bar">
                       </view>
                     </view>
-
+                    <view class="c-like fbold">
+                      <view class="ta-c fbold">
+                        {{item.popularity}}
+                      </view>
+                      <view class="f10 c-center fbold">
+                        人气
+                      </view>
+                      <view class="color-bar">
+                      </view>
+                    </view>
                   </view>
 
                   <view class="btn-group p-vcenter">
-                    <view class="cfff bg-yellow backup" data-cpId="{{item.cpId}}" bindtap="joinBackup">
+                    <view class="cfff bg-yellow backup flex p-center pt-5rpx" data-cpId="{{item.cpId}}" bindtap="joinBackup">
                       加入备选
                     </view>
                     <navigator url="/pages/index/company/company?companyId={{item.cpId}}"  hover-class="navigator-hover">
-                      <view class=" p-yellow">
+                      <view class=" p-yellow p-center pt-5rpx">
                         了解更多
                       </view>
                     </navigator>
