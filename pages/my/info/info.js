@@ -7,12 +7,14 @@ Page({
    */
   data: {
     address: '',
-    date: '2017-11-01',
+    houseStyle: '',
     checkgroups: [
       {name: '5天内', value: '5天内'},
       {name: '10天内', value: '10天内'},
       {name: '15天内', value: '15天内', checked: 'true'},
-    ]
+    ],
+    multiArray: [['1房', '2房', '3房', '4房', '5房'], ['0厅', '1厅', '2厅', '3厅', '4厅'], ['0卫', '1卫', '2卫', '3卫', '4卫']],
+    multiIndex: [0, 1, 1],
   },
   choosePos(){
     const  _this = this
@@ -27,13 +29,18 @@ Page({
       }
     })
   },
-  bindDateChange: function(e) {
-    this.setData({
-      date: e.detail.value
-    })
-  },
+
   radioChange: function(e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value)
+  },
+  bindMultiPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    const multiIndex = e.detail.value
+    const pickMulti = this.data.multiArray
+    this.setData({
+      multiIndex: e.detail.value,
+      ['userinfo.houseStyle']: `${pickMulti[0][multiIndex[0]]}${pickMulti[1][multiIndex[1]]}${pickMulti[2][multiIndex[2]]}`
+    })
   },
   onLoad(){
     const user = wx.getStorageSync('user')
@@ -50,7 +57,7 @@ Page({
     wechat.showBusy('')
     wechat.fetch(wechat.url, 'User/userInfo', params).then(res => {
       this.setData({
-        userinfo: res.data
+        userinfo: res.data,
       })
       wx.hideToast()
     })
@@ -59,6 +66,7 @@ Page({
     wechat.showBusy('资料更改中...')
     const userinfo = e.detail.value //{house: ''}
     userinfo.budget = + userinfo.budget
+    userinfo.houseStyle =  this.data.userinfo.houseStyle
     const user = wechat.getStorage('user').then((value) => {
       let user = value.data
       let params = {

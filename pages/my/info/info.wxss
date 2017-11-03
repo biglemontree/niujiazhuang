@@ -39,8 +39,8 @@ page {
 }
 
 .confirm {
-  bottom: 66rpx;
-  width: 690rpx;
+  bottom: 0rpx;
+  width: 100%;
 }
 .confirm button {
 
