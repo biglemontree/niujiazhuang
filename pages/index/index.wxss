@@ -27,24 +27,19 @@ page {
   display: block;
 }
 .company-wrap {
-  /*margin-top: 40rpx;*/
   height: calc(100% - 100rpx);
-  padding: 40rpx 0;
   width: 100%;
   box-sizing: border-box;
-  /*overflow: auto;*/
 }
 swiper {
   height:100%;
-  width: 90%;
+  width: 100%;
   background:#ffffff;
-  border:1px solid #dddddd;
   box-shadow:0 4px 8px 0 rgba(170,170,170,0.50);
-  margin-left: 5%;
-  /*margin-top: 90rpx;*/
+
 }
 .face-img {
-  height: 35%;
+  height: 42%;
   overflow: auto;
 }
 .slide-image image {
@@ -52,13 +47,19 @@ swiper {
 }
 .slide-image {
   overflow: auto;
-  height: 100%;
+  background: #fff;
+  height: calc(100% - 80rpx);
+  border:1px solid #dddddd;
+  box-shadow:0 4px 8px 0 rgba(170,170,170,0.50);
 }
 swiper-item {
-  width: 90% ;
+  width: 90%!important ;
   height: 100%;
   overflow: auto;
-  /*margin-left: 5%;*/
+  padding: 5% ;
+  background-color: rgba(170,170,170,0.30);
+  /*margin-left: -7%;*/
+  transform: translateX(-20rpx);
 }
 .c-desc {
   font-size: 52rpx;

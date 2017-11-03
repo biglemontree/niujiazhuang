@@ -1,8 +1,8 @@
-
 function fetch(api, path, params) {
 const Promise = require('./bluebird')
     return new Promise( (resolve, reject) => {
         wx.request({
+
             url: `${api}/${path}`,
             data: Object.assign({}, params),
             // method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
