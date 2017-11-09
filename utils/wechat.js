@@ -119,8 +119,8 @@ function checkPhone(phone){
     return true
 }
 
-// const apiUrl = 'http://1u74g42002.imwork.net/niujiazhuang/api'
-const apiUrl = 'https://www.jakzx.com/niujiazhuang/api'
+const apiUrl = 'http://1u74g42002.imwork.net/niujiazhuang/api'
+// const apiUrl = 'https://www.jakzx.com/niujiazhuang/api'
 function uploadFile(tempFilePaths, formData) {
   return new Promise((resolve, reject) => {
     wx.uploadFile({

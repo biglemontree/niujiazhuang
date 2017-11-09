@@ -15,6 +15,7 @@ Page({
     ],
     multiArray: [['1房', '2房', '3房', '4房', '5房'], ['0厅', '1厅', '2厅', '3厅', '4厅'], ['0卫', '1卫', '2卫', '3卫', '4卫']],
     multiIndex: [0, 1, 1],
+    array: ['中式', '欧式', '现代', '简装', '其他'],
   },
   choosePos(){
     const  _this = this
@@ -42,6 +43,14 @@ Page({
       ['userinfo.houseStyle']: `${pickMulti[0][multiIndex[0]]}${pickMulti[1][multiIndex[1]]}${pickMulti[2][multiIndex[2]]}`
     })
   },
+  bindPickerChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    const pickIndex = e.detail.value
+    const pickStyle = this.data.array
+    this.setData({
+      ['userinfo.style']: `${pickStyle[pickIndex]}`
+    })
+  },
   onLoad(){
     const user = wx.getStorageSync('user')
     if (!user) {
@@ -67,11 +76,11 @@ Page({
     const userinfo = e.detail.value //{house: ''}
     userinfo.budget = + userinfo.budget
     userinfo.houseStyle =  this.data.userinfo.houseStyle
+    userinfo.style =  this.data.userinfo.style
     const user = wechat.getStorage('user').then((value) => {
       let user = value.data
       let params = {
         ...userinfo,
-        // houseStyle: `${value.house}房${value.hall}厅${value.cook}卫`,
         id: user.id,
         phone: +user.phone,
         token: user.token

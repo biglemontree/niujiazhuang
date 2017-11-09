@@ -19,13 +19,11 @@ Page({
         var lon = +res.longitude
 
         const user = wx.getStorageSync('user')
-        if (!user) {
-          wx.navigateTo({
-            url: './signin/signin'
-          })
-          return
+        let params = {lat, lon}
+        if (user) {
+          params.userId = user.id,
+          params.token = user.token
         }
-        let params = {lat, lon, token: user.token, userId: user.id}
         console.log(params);
         wechat.showBusy('加载中...')
         wechat.fetch(wechat.url, 'Company/companyList', params).then(data => {

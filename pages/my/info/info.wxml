@@ -41,25 +41,24 @@
           户型
         </view>
         <view class="section value f17 fbold">
-          <!-- <view class="section__title">户型选择</view> -->
           <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" name='houseStyle'>
             <view class="">
               {{userinfo.houseStyle?userinfo.houseStyle:'请选择'}}
-            <!-- {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}} {{multiArray[2][multiIndex[2]]}} -->
             </view>
           </picker>
         </view>
-        <!-- <input class="value f17 fbold" name="houseStyle" value="{{userinfo.houseStyle}}" placeholder='房卫厅'></input>房卫厅 -->
-
-        <!-- <input class="value f17 " value="" placeholder="几" type='number' name="house" />房
-        <input class="value f17 " value="" placeholder="几" type='number' name="cook" />卫
-        <input class="value f17 " value="" placeholder="几" type='number' name="hall" />厅 -->
       </view>
       <view class="item p-vcenter">
         <view class="left f17 fbold">
           装修风格
         </view>
-        <input class="value f17 fbold" name="style" value="{{userinfo.style}}"></input>
+        <view class="section value f17 fbold">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker">
+              {{userinfo.style?userinfo.style:'请选择'}}
+            </view>
+          </picker>
+        </view>
       </view>
       <view class="item p-vcenter">
         <view class="left f17 fbold">

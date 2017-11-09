@@ -107,7 +107,7 @@
             <text class="nowrap">{{item.area}}平米</text>
             <text class="nowrap">{{(item.budget)}}万</text>
           </view>
-          <image class="record-pic" src="{{item.href}}" mode='center' ></image>
+          <image class="record-pic" src="{{item.href}}" mode='aspectFill' ></image>
           <view class="record-number p-vcenter p-gray">
             <view class="record-view f12">
               浏览次数: <text class="record-value fbold f15">{{item.watchCount}}</text>
