@@ -55,7 +55,7 @@ Page({
     const user = wx.getStorageSync('user')
     if (!user) {
       wx.navigateTo({
-        url: './../../../index/signin/signin.js'
+        url: './../../../index/signin/signin'
       })
       return ;
     }

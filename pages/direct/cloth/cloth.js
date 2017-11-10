@@ -136,11 +136,10 @@ Page(observer({
     }).catch((err) => {
       console.log('no signin');
       wechat.getModal('登录', '只有登陆才能定制下单').then((value) => {
-        wx.reLaunch({
+        wx.navigateTo({
           url: '../../index/signin/signin'
         })
       })
     })
-
   }
 }))

@@ -33,22 +33,22 @@ Page({
    */
   onLoad: function (options) {
      companyId = options.companyId
-     console.log(options);
+     console.log(typeof companyId);
      const user = wx.getStorageSync('user')
-     if (!user) {
-       wx.navigateTo({
-         url: './../signin/signin.js'
-       })
-       return
+     let companyInfo = {companyId}
+     let gdExampleInfo = {companyId}
+     if (user) {
+       companyInfo.userId = user.id
+       gdExampleInfo.userId = user.id
      }
      wechat.showBusy('加载中...')
     //  公司档案
-    wechat.fetch(wechat.url, 'Company/companyInfo', {companyId, userId: user.id}).then(res => {
+    wechat.fetch(wechat.url, 'Company/companyInfo', companyInfo).then(res => {
       let companyInfo = res.data
       this.setData({companyInfo})
     })
     //  公司案例
-    wechat.fetch(wechat.url, 'GdExample/gdExampleInfo', {companyId, userId: user.id}).then(res => {
+    wechat.fetch(wechat.url, 'GdExample/gdExampleInfo', gdExampleInfo).then(res => {
       let GdExampleInfo = res.data.GdExampleInfo
       this.setData({GdExampleInfo, isBackup: res.data.status});
       wx.hideToast()
@@ -56,6 +56,7 @@ Page({
     // 业主口碑
     wechat.fetch(wechat.url, 'Company/companyEvaluateList', {companyId}).then(res => {
       let evaluateList = res.data.evaluateList
+
       const newEvaluateList = evaluateList.map(item => {
         let evaluateTime = item.createTime
 
@@ -69,6 +70,7 @@ Page({
   },
   // 添加案例
   addList(){
+    console.log(companyId);
     app.addList(companyId)
   },
 
@@ -109,7 +111,10 @@ Page({
     let index = dataset.index
     let userId = wx.getStorageSync('user').id
     if (!userId) {
-      wechat.showToast('userid不存在')
+      wx.navigateTo({
+           url: './../signin/signin'
+         })
+      // wechat.showToast('userid不存在')
       return
     }
     wechat.fetch(wechat.url, 'GdExample/clickLike', {gdId, userId}).then(res => {

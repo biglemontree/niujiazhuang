@@ -2,7 +2,7 @@
 <view class='container'>
   <view  bindtap="search" class="bg-yellow p-rcenter search">
 
-      <input class="ta-c f14" placeholder="搜索公司名称" name="search" confirm-type="搜索" placeholder-class='search-name' bindinput="" bindconfirm="searchCompany"  bindfocus="hideCompany"/>
+      <input class="ta-c f14" placeholder="搜索公司名称" name="search" focus='true' confirm-type="搜索" placeholder-class='search-name' bindinput="" bindconfirm="searchCompany"  bindfocus="hideCompany"/>
   </view>
   <!--  wx:for="{{search}}" -->
   <view wx:if='{{!isShow}}'>

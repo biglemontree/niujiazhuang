@@ -19,8 +19,10 @@ App({
     })
   },
   addList(companyId){
+    let _this = this
     const user = wx.getStorageSync('user')
     if (!user) {
+      console.log('addList', user);
       wechat.showModal('登陆', '只有登录用户才能使用加入备选这个功能，请先登录').then(res => {
         wx.navigateTo({
           url: '/pages/index/signin/signin'
@@ -29,7 +31,8 @@ App({
       })
     }
     const status = wx.getStorageSync('status')
-    if (status  == 0) {
+    console.log(status);
+    if (user && status  == 0) {
       wechat.showModal('提示', '只有完善资料才能使用加入备选这个功能，请先完善资料').then(res => {
         wx.navigateTo({
           url: '/pages/my/info/info'
@@ -38,6 +41,7 @@ App({
       return
     }
     let params = {companyId, userId: user.id, token: user.token}
+    console.log(params);
     wechat.showBusy('加入中...', 'loading')
     wechat.fetch(wechat.url, 'Company/addList', params).then(res => {
       let result = res.data;
@@ -48,7 +52,10 @@ App({
       if (res.data.code === 1) {
         wx.hideToast()
         wechat.showToast('加入备选成功', 'success')
-        this.setData({test:"test1"}) // 强制刷新
+        // this.setData({test:"test1"}) // 强制刷新
+        wx.navigateTo({
+          url: './company'
+        })
       }else if (res.data.code === 2) {
         wechat.showModal('提示!', '受邀已达上限')
       } else if (res.data.code === 0) {

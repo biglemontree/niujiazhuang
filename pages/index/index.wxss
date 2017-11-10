@@ -1,12 +1,11 @@
 /**index.wxss**/
 page {
   background-color: #fafafa;
+  /*font-family: '微软雅黑';*/
 }
 .container {
   height: 100%;
-  background-color: rgba(170,170,170,0.30);
-  /*background-color: #d8d8d8;*/
-
+  /*background-color: rgba(170,170,170,0.30);*/
 }
 .search {
   height: 100rpx;
@@ -31,89 +30,30 @@ page {
   width: 100%;
   box-sizing: border-box;
 }
-swiper {
-  height:100%;
-  width: 100%;
+.card {
+  margin-top: 20rpx;
+  border:1px solid #dddddd;
   background:#ffffff;
   box-shadow:0 4px 8px 0 rgba(170,170,170,0.50);
-
 }
-.face-img {
-  height: 42%;
-  overflow: auto;
+.card:last-child {
+  margin-bottom: 20rpx;
 }
-.slide-image image {
-  width: 100%;
+.swiper {
+  width: 65%;
+  height: 400rpx;
 }
-.slide-image {
-  overflow: auto;
-  background: #fff;
-  height: calc(100% - 80rpx);
-  border:1px solid #dddddd;
-  box-shadow:0 4px 8px 0 rgba(170,170,170,0.50);
-}
-swiper-item {
-  width: 90%!important ;
-  height: 100%;
-  overflow: auto;
-  padding: 5% ;
-  background-color: rgba(170,170,170,0.30);
-  /*margin-left: -7%;*/
-  transform: translateX(-20rpx);
+.wx-swiper-dots {
+  float: right;
+  margin-right: -50rpx;
 }
 .c-desc {
-  font-size: 52rpx;
+  font-size: 40rpx;
 }
 .c-name {
-  margin-top: -30rpx;
-  padding: 0;
-}
-.c-name text{
-  padding-bottom: 30rpx;
-  border-bottom: 4rpx solid #ccc;
-}
-.c-data {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 30rpx;
-}
-.c-data  .c-satify > view {
-  text-align: center;
-  flex-direction: column;
-}
-.c-center {
-  margin: 15rpx 0;
-}
-.color-bar {
-  width: 50rpx;
-  height: 10rpx;
-  border-radius: 10rpx;
-  margin: 0 auto;
-  background-color: #ff6801;
-}
-
-.btn-group {
-  justify-content: space-around;
-  margin-top: 30rpx;
-}
-.btn-group .backup, .btn-group navigator {
-  width: 198rpx;
-  height: 62rpx;
-  font-size: 30rpx;
-  line-height: 62rpx;
-  text-align: center;
-  border:1px solid #ff8162;
-  border-radius: 60rpx;
-}
-.btn-group navigator {
-
+  font-family: '微软雅黑'
 }
 .c-address {
-  margin-top: 30rpx;
-  justify-content: space-between;
-  padding: 0 20rpx;
-}
-.c-address .address-left image {
-  width: 25rpx;
-  height: 32rpx;
+  border-bottom: 2px solid #dddddd;
+  /*box-shadow:0 0px 1px rgba(170,170,170,0.50);*/
 }

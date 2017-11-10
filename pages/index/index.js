@@ -5,7 +5,11 @@ const wechat = require('../../utils/wechat')
 Page({
   data: {
     isShow: true,
-
+    imgUrls: [
+      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+    ],
     indicatorDots: true,
     autoplay: false,
     interval: 5000,
@@ -21,14 +25,13 @@ Page({
         const user = wx.getStorageSync('user')
         let params = {lat, lon}
         if (user) {
-          params.userId = user.id,
+          params.userId = user.id
           params.token = user.token
         }
         console.log(params);
         wechat.showBusy('加载中...')
         wechat.fetch(wechat.url, 'Company/companyList', params).then(data => {
           let list = data.data.info
-          console.log(data);
           this.setData({
             list
           })
@@ -54,44 +57,16 @@ Page({
     this.getList()
 
   },
-  // 失去焦点
-  hideCompany(e){
-
-    this.setData({
-      'isShow': !this.data.isShow
-    })
-  },
-  // 按下搜索键
-  searchCompany(e){
-    let value = e.detail.value;
-    wechat.showBusy('搜索中...')
-    wechat.getLocation().then(res => {
-      let params = {companyName: value, lat: +res.latitude, lon: +res.longitude}
-      wechat.fetch(wechat.url, 'Company/search', params).then(data => {
-        if (data.data.code == 1) {
-
-          let list = data.data.companyList;
-          this.setData({
-            search: list
-          })
-          wx.hideToast()
-          //this.hideCompany() //显示公司
-        }
-      })
-    })
-  },
   goToSearch(){
     wx.navigateTo({
       url: './search/search'
     })
   },
   goToCompany(e){
-    // wx.na
-    let index = e.currentTarget.dataset.index;
-    this.setData({
-      current: index
+    const cpid = (e.currentTarget.dataset.cpid)
+    wx.navigateTo({
+      url: `./company/company?companyId=${cpid}`
     })
-    this.hideCompany() //显示公司
   },
   joinBackup(e){
     let companyId = e.target.dataset.cpid

@@ -10,89 +10,72 @@
       <!-- <view>测试</view> -->
     </navigator>
   </view>
-  <view class=" company-wrap" wx:if='{{isShow}}'>
-      <swiper indicator-dots="{{indicatorDots}}"
-      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{current}}">
-        <block wx:for="{{list}}" wx:key="index">
+  <view class=" company-wrap pd10">
+    <view class='pd10 py-10 card' wx:for="{{list}}" wx:key="index" data-cpId="{{item.cpId}}" bindtap='goToCompany'>
+      <view class='flex'>
+        <swiper indicator-dots="{{indicatorDots}}" width='200' class='swiper'
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{item.faceImg}}">
             <swiper-item>
-              <view class="slide-image">
-                <view class='face-img'>
-                  <image src="{{item.faceImg}}" class="slide-image" width="355" height="150" mode='widthFix'/>
-                </view>
-                <view class="c-infos ">
-                  <view class="p-rcenter c-desc fbold truncate">{{item.cpWork}}</view>
-                  <view class="p-rcenter f14 c-name">
-                    <text class='truncate pd10'>
-                      {{item.cpNname}}
-                    </text>
-                  </view>
-                  <view class="c-data">
-                    <view class="c-satify fbold">
-                      <view class="fbold">
-                        {{item.satisfactionRate}}
-                      </view>
-                      <view class="f10 c-center ">
-                        满意率(%)
-                      </view>
-                      <view class="color-bar">
-                      </view>
-                    </view>
-                    <view class="c-deal fbold">
-                      <view class="ta-c">
-                        {{item.finishSize}}
-                      </view>
-                      <view class="f10 c-center fbold">
-                        成交量(套)
-                      </view>
-                      <view class="color-bar">
-                      </view>
-                    </view>
-                    <view class="c-like fbold">
-                      <view class="ta-c fbold">
-                        {{item.evaluleSize}}
-                      </view>
-                      <view class="f10 c-center fbold">
-                        评论(次)
-                      </view>
-                      <view class="color-bar">
-                      </view>
-                    </view>
-                    <view class="c-like fbold">
-                      <view class="ta-c fbold">
-                        {{item.popularity}}
-                      </view>
-                      <view class="f10 c-center fbold">
-                        人气
-                      </view>
-                      <view class="color-bar">
-                      </view>
-                    </view>
-                  </view>
-
-                  <view class="btn-group p-vcenter">
-                    <view class="cfff bg-yellow backup flex p-center pt-5rpx" data-cpId="{{item.cpId}}" bindtap="joinBackup">
-                      加入备选
-                    </view>
-                    <navigator url="/pages/index/company/company?companyId={{item.cpId}}"  hover-class="navigator-hover">
-                      <view class=" p-yellow p-center pt-5rpx">
-                        了解更多
-                      </view>
-                    </navigator>
-                  </view>
-
-                  <view class="c-address p-vcenter">
-                    <view class="address-left f11 p-gray">
-                      <image src="/images/me/btn_map.png" mode='widthFix' />
-                      {{item.cpAddress}}
-                    </view>
-                    <view class="address-right f11 p-gray">
-                      距离：{{item.distance}} KM
-                    </view>
-                  </view>
-                </view>
-              </view>
+              <image src="{{item}}" class="slide-image" width="200" height="200"/>
             </swiper-item>
-        </block>
-      </swiper>
+          </block>
+        </swiper>
+        <view class='dpI pl-10'>
+          <view>
+            <image class='w-30px h-30px' src="./../../images/cat.png"/>
+            <image class='w-30px h-30px' src="./../../images/cat.png"/>
+            <image class='w-30px h-30px' src="./../../images/cat.png"/>
+          </view>
+          <view class="c-data">
+            <view class="c-satify fbold p-vcenter">
+              <view class="p-gray f14  fbold nowrap">
+                满意度:
+              </view>
+              <view class="fbold pl-10">
+                {{item.satisfactionRate}}%
+              </view>
+            </view>
+            <view class="c-deal fbold p-vcenter">
+              <view class="p-gray f14   fbold">
+                成交量:
+              </view>
+              <view class="pl-10 fbold nowrap">
+                {{item.finishSize}}
+              </view>
+            </view>
+            <view class="c-like fbold p-vcenter">
+              <view class="p-gray f14   fbold">
+                评论人:
+              </view>
+              <view class="pl-10 fbold nowrap">
+                {{item.evaluleSize}}
+              </view>
+            </view>
+            <view class="c-like fbold p-vcenter">
+              <view class="p-gray f14   fbold">
+                人气值:
+              </view>
+              <view class="pl-10 fbold nowrap">
+                {{item.popularity}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="f24 fbold c-name py-30">
+        {{item.cpNname}}
+      </view>
+      <view class="c-address p-vbetween pb-20">
+        <view class="address-left f14 p-gray fbold">
+          {{item.cpAddress}}
+        </view>
+        <view class="address-right f14 fbold">
+          距我：{{item.distance}} KM
+        </view>
+      </view>
+      <view class="pt-10rpx c-desc fbold truncate2">[公司定位] {{item.cpWork}}</view>
+    </view>
+
   </view>
 </view>

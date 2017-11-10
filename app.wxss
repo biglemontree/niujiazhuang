@@ -17,7 +17,13 @@ page {
 .bg-fa {background-color: #fafafa;}
 .bg-fff {background-color: #fff;}
 .bb-s {border-bottom: 1px solid #DDDEE2;}
+
+.w-10px {width: 20rpx;}
+.w-30px {width: 60rpx;}
+.h-10px {height: 20rpx;}
+.h-30px {height: 60rpx;}
 /*font*/
+.f24 {font-size: 48rpx}
 .f18 {font-size: 36rpx}
 .f17 {font-size: 34rpx}
 .f16 {font-size: 32rpx}
@@ -35,13 +41,25 @@ page {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.truncate2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
 /*间距*/
 .pd10 {padding-left: 20rpx;padding-right: 20rpx;}
 .pd15 {padding-left: 30rpx;padding-right: 30rpx;}
 .py-10 {padding-top: 20rpx; padding-bottom: 20rpx;}
+.py-20 {padding-top: 40rpx; padding-bottom: 40rpx;}
+.py-30 {padding-top: 60rpx; padding-bottom: 60rpx;}
 .pr-20 {padding-right: 40rpx;}
 .pt-5rpx {padding-top: 5rpx;}
+.pt-10rpx {padding-top: 20rpx;}
+.pb-20 {padding-bottom: 40rpx;}
 .pdl17 {padding-left: 34rpx;}
+.pl-10 {padding-left: 20rpx;}
+.pl-20 {padding-left: 40rpx;}
 /*布局*/
 .pos-fix{position:fixed}.pos-rel{position:relative}.pos-abs{position:absolute}.pos-stc{position:static}
 .t0{top:0}.b0{bottom:0}.l0{left:0}.r0{right:0}
@@ -49,6 +67,7 @@ page {
 .dpI{display: inline-block;}
 .dpN{display:none;}
 .dpB{display:block;}
+.flex{display: flex;}
 .viH{visibility: hidden;}
 .bs-bb{box-sizing: border-box;}
 .ta-c {text-align: center;}
