@@ -71,7 +71,7 @@ Page({
   // 添加案例
   addList(){
     console.log(companyId);
-    app.addList(companyId)
+    app.addList(companyId, this)
   },
 
   imageLoad:function(e){

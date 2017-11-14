@@ -10,6 +10,7 @@ page {
 .search {
   height: 100rpx;
   align-items: flex-end;
+  transition: all 1s ease-in-out;
 }
 .search-name {
   text-align: center;
@@ -27,11 +28,12 @@ page {
 }
 .company-wrap {
   height: calc(100% - 100rpx);
+  padding-top: 120rpx;
   width: 100%;
   box-sizing: border-box;
 }
 .card {
-  margin-top: 20rpx;
+  margin-bottom: 20rpx;
   border:1px solid #dddddd;
   background:#ffffff;
   box-shadow:0 4px 8px 0 rgba(170,170,170,0.50);
@@ -40,20 +42,49 @@ page {
   margin-bottom: 20rpx;
 }
 .swiper {
-  width: 65%;
-  height: 400rpx;
+  /*width: 65%;*/
+  width: 439rpx;
+  height: 300rpx;
+}
+.right {
+  padding-top: 0rpx;
+}
+.p-left {
+  color: #9b9b9b;
+}
+.cat {
+  width: 36rpx;
+  height: 40rpx;
+  margin-right: 4rpx;
 }
 .wx-swiper-dots {
   float: right;
   margin-right: -50rpx;
 }
+.right {
+  transform: translateY(-10rpx);
+}
+.c-data {
+  margin-top: 30rpx;
+}
+.p-gray {
+  color: #9b9b9b;
+}
+.c-data > view {
+  margin-top: 10rpx;
+}
+
 .c-desc {
-  font-size: 40rpx;
+  font-size: 30rpx;
 }
 .c-name {
-  font-family: '微软雅黑'
+  /*font-family: '微软雅黑'*/
+  font-size: 36rpx;
+  padding-top: 43rpx;
+  padding-bottom: 32rpx;
 }
 .c-address {
-  border-bottom: 2px solid #dddddd;
+  padding-bottom: 33rpx;
+  border-bottom: 1px solid #d8d8d8;
   /*box-shadow:0 0px 1px rgba(170,170,170,0.50);*/
 }

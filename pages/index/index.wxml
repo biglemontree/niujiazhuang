@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="search" class="bg-yellow p-rcenter search">
+  <view  bindtap="search" class="bg-yellow p-rcenter search pos-fix w-100 z1"  animation="{{animationData}}" style='opacity: {{opacity}}'>
       <input class="ta-c f14" placeholder="搜索公司名称" name="search" confirm-type="搜索" placeholder-class='search-name' bindinput="" bindconfirm="searchCompany"  bindfocus="goToSearch"/>
   </view>
   <!--  wx:for="{{search}}" -->
@@ -10,72 +10,71 @@
       <!-- <view>测试</view> -->
     </navigator>
   </view>
-  <view class=" company-wrap pd10">
+  <view class=" company-wrap pd10"  >
     <view class='pd10 py-10 card' wx:for="{{list}}" wx:key="index" data-cpId="{{item.cpId}}" bindtap='goToCompany'>
       <view class='flex'>
-        <swiper indicator-dots="{{indicatorDots}}" width='200' class='swiper'
-          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <swiper indicator-dots="{{indicatorDots}}" width='200' class='swiper' indicator-active-color="{{activeColor}}"
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{color}}">
           <block wx:for="{{item.faceImg}}">
             <swiper-item>
               <image src="{{item}}" class="slide-image" width="200" height="200"/>
             </swiper-item>
           </block>
         </swiper>
-        <view class='dpI pl-10'>
-          <view>
-            <image class='w-30px h-30px' src="./../../images/cat.png"/>
-            <image class='w-30px h-30px' src="./../../images/cat.png"/>
-            <image class='w-30px h-30px' src="./../../images/cat.png"/>
+        <view class=' pl-10 right'>
+          <view class='cats flex'>
+           <image class='cat' src="./../../images/cat.png"/>
+            <image class='cat' src="./../../images/cat.png"/>
+            <image class='cat' src="./../../images/cat.png"/>
           </view>
-          <view class="c-data">
+          <view class="c-data f14">
             <view class="c-satify fbold p-vcenter">
-              <view class="p-gray f14  fbold nowrap">
+              <view class="p-left f14  fbold nowrap">
                 满意度:
               </view>
-              <view class="fbold pl-10">
+              <view class="fbold pl-20">
                 {{item.satisfactionRate}}%
               </view>
             </view>
             <view class="c-deal fbold p-vcenter">
-              <view class="p-gray f14   fbold">
+              <view class="p-left f14   fbold">
                 成交量:
               </view>
-              <view class="pl-10 fbold nowrap">
+              <view class="pl-20 fbold nowrap">
                 {{item.finishSize}}
               </view>
             </view>
             <view class="c-like fbold p-vcenter">
-              <view class="p-gray f14   fbold">
+              <view class="p-left f14   fbold">
                 评论人:
               </view>
-              <view class="pl-10 fbold nowrap">
+              <view class="pl-20 fbold nowrap">
                 {{item.evaluleSize}}
               </view>
             </view>
             <view class="c-like fbold p-vcenter">
-              <view class="p-gray f14   fbold">
+              <view class="p-left f14   fbold">
                 人气值:
               </view>
-              <view class="pl-10 fbold nowrap">
+              <view class="pl-20 fbold nowrap">
                 {{item.popularity}}
               </view>
             </view>
           </view>
         </view>
       </view>
-      <view class="f24 fbold c-name py-30">
+      <view class=" fbold c-name ">
         {{item.cpNname}}
       </view>
-      <view class="c-address p-vbetween pb-20">
-        <view class="address-left f14 p-gray fbold">
+      <view class="c-address p-vbetween ">
+        <view class="address-left f12 p-gray fbold">
           {{item.cpAddress}}
         </view>
-        <view class="address-right f14 fbold">
+        <view class="address-right f12 fbold">
           距我：{{item.distance}} KM
         </view>
       </view>
-      <view class="pt-10rpx c-desc fbold truncate2">[公司定位] {{item.cpWork}}</view>
+      <view class="pt-10rpx c-desc fbold truncate2">「公司」 {{item.cpWork}}</view>
     </view>
-
   </view>
 </view>
